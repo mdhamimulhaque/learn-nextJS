@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import Link from "next/link";
-import RootLayout from "../../components/Layouts/RootLayout";
+import RootLayout from "@/components/Layouts/RootLayout";
 
 const HomePage = () => {
   return (
