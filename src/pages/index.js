@@ -1,10 +1,9 @@
-import { Button } from "antd";
-import Link from "next/link";
 import PNewsRootLayout from "@/components/Layouts/PNewsRootLayout";
 import Head from "next/head";
 import Banner from "@/components/Ui/Banner";
 
-const HomePage = () => {
+const HomePage = ({ allNews }) => {
+  console.log(allNews);
   return (
     <div>
       <Head>
@@ -28,4 +27,14 @@ export default HomePage;
 // };
 HomePage.getLayout = function getLayout(page) {
   return <PNewsRootLayout>{page}</PNewsRootLayout>;
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:5000/news");
+  const data = await res.json();
+  return {
+    props: {
+      allNews: data,
+    },
+  };
 };

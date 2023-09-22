@@ -103,4 +103,4 @@ const PNewsRootLayout = ({ children }) => {
     </Layout>
   );
 };
-export default RootLayout;
+export default PNewsRootLayout;
