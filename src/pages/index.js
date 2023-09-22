@@ -1,25 +1,31 @@
 import { Button } from "antd";
 import Link from "next/link";
-import RootLayout from "@/components/Layouts/RootLayout";
+import PNewsRootLayout from "@/components/Layouts/PNewsRootLayout";
 import Head from "next/head";
+import Banner from "@/components/Ui/Banner";
 
 const HomePage = () => {
   return (
     <div>
       <Head>
-        <title>Home page</title>
-        <meta name="next js" description="Learning next js" />
+        <title>PH-News Portal</title>
+        <meta
+          name="description"
+          content="This is news portal of programming hero made by next-js"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>This is Home page</h1>
-      <Button type="primary">
-        <Link href="/products">Products</Link>
-      </Button>
+      <Banner />
     </div>
   );
 };
 
 export default HomePage;
 
+// HomePage.getLayout = function getLayout(page) {
+//   return <RootLayout>{page}</RootLayout>;
+// };
 HomePage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>;
+  return <PNewsRootLayout>{page}</PNewsRootLayout>;
 };
