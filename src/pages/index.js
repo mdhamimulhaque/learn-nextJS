@@ -2,8 +2,10 @@ import PNewsRootLayout from "@/components/Layouts/PNewsRootLayout";
 import Head from "next/head";
 import Banner from "@/components/Ui/Banner";
 import AllNews from "@/components/Ui/AllNews";
+import { useGetNewsesQuery } from "@/redux/api/api";
 
 const HomePage = ({ allNews }) => {
+  const { data, isLoading } = useGetNewsesQuery();
   return (
     <div>
       <Head>
@@ -16,7 +18,7 @@ const HomePage = ({ allNews }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner />
-      <AllNews allNews={allNews} />
+      <AllNews allNews={data} />
     </div>
   );
 };
